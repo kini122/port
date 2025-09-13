@@ -1,0 +1,16 @@
+body { margin: 0; font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; }
+.hero {
+  height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+  background: linear-gradient(-45deg, #6d5dfc, #46a9fc, #ff6ec4, #7873f5);
+  background-size: 400% 400%; animation: gradient 12s ease infinite;
+}
+@keyframes gradient { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+.glow-text { font-size: 4rem; text-shadow: 0 0 20px #46a9fc; }
+.cta { padding: 12px 30px; border: 2px solid #fff; border-radius: 30px; margin-top: 20px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 20px; margin-top: 40px; }
+.card { background:#111; border-radius:20px; overflow:hidden; transition:.3s; }
+.card img { width:100%; display:block; }
+.card:hover { transform: scale(1.05) rotate3d(1,1,0,8deg); }
+#cursor { width:20px; height:20px; border:2px solid #fff; border-radius:50%; position:fixed; transform:translate(-50%,-50%); pointer-events:none; transition: transform .1s; }
+.ticker { margin-top: 20px; white-space: nowrap; overflow: hidden; animation: scroll-left 15s linear infinite; }
+@keyframes scroll-left { from {transform:translateX(0);} to {transform:translateX(-50%);} }
