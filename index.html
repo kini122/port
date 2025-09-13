@@ -3,130 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Polo Portfolio – Athul</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-
-  <!-- Styles -->
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; overflow-x: hidden; }
-    a { color: inherit; text-decoration: none; }
-    h1, h2, h3 { font-weight: 600; }
-    section { padding: 100px 20px; max-width: 1200px; margin: auto; }
-
-    /* Hero */
-    header {
-      height: 100vh; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; text-align: center;
-    }
-    header h1 { font-size: 3.5rem; }
-    header p { margin-top: 10px; font-size: 1.3rem; opacity: 0.8; }
-    header .cta {
-      margin-top: 30px; padding: 14px 32px; border: 2px solid #46a9fc;
-      border-radius: 50px; font-weight: 600; transition: 0.3s;
-    }
-    header .cta:hover { background: #46a9fc; color: #0a0a0a; }
-
-    /* About */
-    .about { display: flex; flex-wrap: wrap; align-items: center; gap: 40px; }
-    .about img { width: 250px; border-radius: 20px; }
-    .about-text { flex: 1; }
-
-    /* Projects */
-    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-    .card {
-      background: #1a1a1a; border-radius: 16px; overflow: hidden;
-      transform: translateY(50px); opacity: 0;
-      transition: transform 0.4s ease, opacity 0.4s ease;
-    }
-    .card img { width: 100%; display: block; }
-    .card-body { padding: 20px; }
-    .card h3 { margin-bottom: 8px; }
-    .card:hover { transform: scale(1.05) translateY(-10px); }
-
-    /* Contact */
-    .contact { text-align: center; }
-    .contact p { margin: 10px 0; }
-
-    footer { text-align: center; padding: 40px; font-size: 0.9rem; opacity: 0.7; }
-  </style>
+  <title>Athul | Crazy Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 </head>
 <body>
+  <!-- Custom Cursor -->
+  <div id="cursor"></div>
 
-  <!-- Hero -->
-  <header>
-    <h1>Athul Shyam</h1>
-    <p>UI/UX Designer & Web Creator</p>
-    <a href="#projects" class="cta">See My Work</a>
+  <!-- Hero with Animated Gradient -->
+  <header class="hero">
+    <h1 class="glow-text">Athul Shyam</h1>
+    <p>UI/UX Designer • Creative Coder</p>
+    <a href="#projects" class="cta wave-btn">Explore Work</a>
+    <div id="stars-bg"></div>
   </header>
 
   <!-- About -->
-  <section id="about">
+  <section id="about" class="fade-section">
     <h2>About Me</h2>
-    <div class="about">
-      <img src="assets/profile.jpg" alt="Athul">
-      <div class="about-text">
-        <p>I design and build modern, user-friendly digital products. From wireframes to polished UI, I focus on clarity, usability, and visual impact.</p>
-      </div>
+    <p>I blend <span class="highlight">design</span> & <span class="highlight">technology</span> to create human-focused interfaces.</p>
+    <div class="counter-box">
+      <span class="counter" data-target="5">0</span>+ Years Experience
     </div>
   </section>
 
   <!-- Projects -->
   <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="card">
-        <img src="assets/work1.jpg" alt="Project 1">
-        <div class="card-body">
-          <h3>Project One</h3>
-          <p>Case study description here.</p>
-        </div>
+    <h2 class="scroll-reveal">Projects</h2>
+    <div class="grid">
+      <div class="card tilt hover-zoom">
+        <img src="assets/work1.jpg" alt="">
+        <h3>Image Reveal Grid</h3>
       </div>
-      <div class="card">
-        <img src="assets/work2.jpg" alt="Project 2">
-        <div class="card-body">
-          <h3>Project Two</h3>
-          <p>Case study description here.</p>
-        </div>
+      <div class="card tilt hover-zoom">
+        <img src="assets/work2.jpg" alt="">
+        <h3>3D Slider</h3>
       </div>
-      <div class="card">
-        <img src="assets/work3.jpg" alt="Project 3">
-        <div class="card-body">
-          <h3>Project Three</h3>
-          <p>Case study description here.</p>
-        </div>
+      <div class="card tilt hover-zoom">
+        <img src="assets/work3.jpg" alt="">
+        <h3>Glass Shuffle</h3>
       </div>
     </div>
+  </section>
+
+  <!-- Parallax Media -->
+  <section id="media">
+    <h2>Interactive Media</h2>
+    <div class="parallax"></div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-      <p>Dribbble | Behance | LinkedIn</p>
-    </div>
+    <h2>Let’s Connect</h2>
+    <button class="glassy-btn ripple">Contact Me</button>
   </section>
 
   <footer>
-    © 2025 Athul Shyam. All rights reserved.
+    <p>© 2025 Athul Shyam — Built with ❤️</p>
+    <div class="ticker">Scrolling Editorial Ticker · Scrolling Editorial Ticker ·</div>
   </footer>
 
-  <!-- Animation Scripts -->
-  <script>
-    // Scroll reveal animation for project cards
-    const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.transform = "translateY(0)";
-          entry.target.style.opacity = "1";
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    cards.forEach(card => observer.observe(card));
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
